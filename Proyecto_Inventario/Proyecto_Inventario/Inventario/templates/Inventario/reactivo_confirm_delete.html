@@ -1,0 +1,13 @@
+{% extends "Inventario/padre.html" %}
+
+{% load static %}
+
+{% block SeccióndeReactivos %}
+
+<form method="post">{% csrf_token %}
+    ¿Estas seguro que deseas borrar el este reactivo "{{ object }}"?
+    <input type="submit" value="SI">
+
+</form>
+
+{% endblock %}

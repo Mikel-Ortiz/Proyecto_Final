@@ -1,0 +1,16 @@
+{% extends "Inventario/padre.html" %}
+
+{% load static %}
+
+{% block SeccióndeReactivos %}
+
+<p>NOMBRE : <i>{{reactivo.nombre}}</i></p>
+<p>ESTADO DE AGREGACIÓN : <i>{{reactivo.estado_de_agregacion}}</i></p>
+<p>CANTIDAD : <i>{{reactivo.cantidad}}</i></p>
+<p>ALMACENAMIENTO : <i>{{reactivo.almacenamiento}}</i></p>
+<p>FECHA DE AGREGADO : <i>{{reactivo.fecha_de_agregado}}</i></p>
+
+<p>
+    <a href="{% url 'estudiante_listar' %}">REGRESAR</a>
+</p>
+{% endblock %}

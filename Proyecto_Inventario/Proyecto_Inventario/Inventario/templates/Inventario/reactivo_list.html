@@ -1,0 +1,28 @@
+{% extends "Inventario/padre.html" %}
+
+{% load static %}
+
+{% block SeccióndeReactivos %}
+
+{% for reactivo in object_list %}
+
+<li>{{reactivo}}</li>
+
+<button>
+    <a href="{% url 'reactivo_detalle' reactivo.id %}">DETALLE</a>
+</button>
+<button>
+    <a href="{% url 'reactivo_editar' reactivo.id %}">EDITAR</a>
+</button>
+<button>
+    <a href="{% url 'reactivo_borrar' reactivo.id %}">BORRAR</a>
+</button>
+
+{% endfor %}
+
+<p>
+    <a href="{% url 'reactivo_crear' %}">CREAR</a>
+</p>
+
+{% endblock %}
+
