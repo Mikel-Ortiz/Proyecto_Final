@@ -16,14 +16,62 @@ class ReactivoDetalle(DetailView):
 
 class ReactivoCreacion(CreateView):
     model = Reactivo
-    succes_url = reverse_lazy('reactivo_listar')
-    fields = ['nombre', 'estado_de_agregación', 'cantidad', 'fecha_agregado']
+    success_url = reverse_lazy('reactivo_listar')
+    fields = ['nombre', 'estado_de_agregacion', 'cantidad', 'almacenamiento']
 
 class ReactivoEdicion(UpdateView):
     model = Reactivo
-    succes_url = reverse_lazy('reactivo_listar')
-    fields = ['nombre', 'estado_de_agregación', 'cantidad', 'fecha_agregado']
+    success_url = reverse_lazy('reactivo_listar')
+    fields = ['nombre', 'estado_de_agregacion', 'cantidad', 'almacenamiento']
 
 class ReactivoEliminacion(DeleteView):
     model = Reactivo
-    succes_url = reverse_lazy('reactivo_listar')
+    success_url = reverse_lazy('reactivo_listar')
+
+#-----------------------------------------------------------#
+
+class ConsumibleList(ListView):
+    model = Consumible
+    template_name = "Inventario/consumible_list.html"
+
+class ConsumibleDetalle(DetailView):
+    model = Consumible
+    template_name = "Inventario/consumible_detalle.html"
+
+class ConsumibleCreacion(CreateView):
+    model = Consumible
+    success_url = reverse_lazy('consumible_listar')
+    fields = ['nombre', 'presentacion', 'cantidad', 'area_de_trabajo']
+
+class ConsumibleEdicion(UpdateView):
+    model = Consumible
+    success_url = reverse_lazy('consumible_listar')
+    fields = ['nombre', 'presentacion', 'cantidad', 'area_de_trabajo']
+
+class ConsumibleEliminacion(DeleteView):
+    model = Consumible
+    success_url = reverse_lazy('consumible_listar')
+
+#-----------------------------------------------------------#
+
+class ProveedorList(ListView):
+    model = Proveedor
+    template_name = "Inventario/proveedor_list.html"
+
+class ProveedorDetalle(DetailView):
+    model = Proveedor
+    template_name = "Inventario/proveedor_detalle.html"
+
+class ProveedorCreacion(CreateView):
+    model = Proveedor
+    success_url = reverse_lazy('proveedor_listar')
+    fields = ['nombre', 'apellido', 'correo', 'telefono', 'empresa']
+
+class ProveedorEdicion(UpdateView):
+    model = Proveedor
+    success_url = reverse_lazy('proveedor_listar')
+    fields = ['nombre', 'apellido', 'correo', 'telefono', 'empresa']
+
+class ProveedorEliminacion(DeleteView):
+    model = Proveedor
+    success_url = reverse_lazy('proveedor_listar')

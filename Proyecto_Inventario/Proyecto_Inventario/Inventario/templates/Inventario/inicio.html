@@ -4,4 +4,24 @@
 
 {% block  SeccióndeReactivos %}
 
+<button>
+    <a href="{% url 'reactivo_crear' %}">CREAR</a>
+    </button>
+
+{% endblock %}
+
+{% block  SeccióndeConsumibles %}
+
+<button>
+    <a href="{% url 'consumible_crear' %}">CREAR</a>
+    </button>
+
+{% endblock %}
+
+{% block  SeccióndeProveedores %}
+
+<button>
+    <a href="{% url 'proveedor_crear' %}">CREAR</a>
+    </button>
+
 {% endblock %}

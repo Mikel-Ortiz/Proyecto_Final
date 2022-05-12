@@ -1,0 +1,16 @@
+{% extends "Inventario/padre.html" %}
+
+{% load static %}
+
+{% block SeccióndeProveedores %}
+
+<p>NOMBRE : <i>{{proveedor.nombre}}</i></p>
+<p>APELLIDO : <i>{{proveedor.apellido}}</i></p>
+<p>CORREO : <i>{{proveedor.correo}</i></p>
+<p>TELEFONO : <i>{{proveedor.telefono}}</i></p>
+<p>EMPRESA : <i>{{proveedor.empresa}}</i></p>
+
+<p>
+    <a href="{% url 'proveedor_listar' %}">REGRESAR</a>
+</p>
+{% endblock %}

@@ -2,10 +2,10 @@
 
 {% load static %}
 
-{% block SeccióndeReactivos %}
+{% block SeccióndeProveedores %}
 
 <form method="post">{% csrf_token %}
-    ¿Estas seguro que deseas borrar este reactivo "{{ object }}"?
+    ¿Estas seguro que deseas borrar este proveedor "{{ object }}"?
     <input type="submit" value="SI">
 
 </form>

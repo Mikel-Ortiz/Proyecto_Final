@@ -1,0 +1,30 @@
+{% extends "Inventario/padre.html" %}
+
+{% load static %}
+
+{% block SeccióndeProveedores %}
+
+{% for proveedor in object_list %}
+
+<li>{{proveedor}}</li>
+
+<button>
+    <a href="{% url 'proveedor_detalle' proveedor.id %}">DETALLE</a>
+</button>
+<button>
+    <a href="{% url 'proveedor_editar' proveedor.id %}">EDITAR</a>
+</button>
+<button>
+    <a href="{% url 'proveedor_borrar' proveedor.id %}">BORRAR</a>
+</button>
+
+{% endfor %}
+
+<p>
+    <button>
+    <a href="{% url 'proveedor_crear' %}">CREAR</a>
+    </button>
+</p>
+
+{% endblock %}
+
