@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 ESTADO_CHOICES = (
     ("líquido", "líquido"),
@@ -23,7 +24,9 @@ class Reactivo(models.Model):
         max_length=25,
         choices= ALMACENAMIENTO,
     )
-    fecha_agregado=models.DateTimeField(auto_now_add=True)
+    fecha_agregado=models.DateTimeField(default=timezone.now)
+
+    readonly_fields = ('fecha_agregado')
 
     def __str__(self):
         return self.nombre
@@ -54,7 +57,7 @@ class Consumible(models.Model):
         max_length=25,
         choices= AREAS,
     )
-     fecha_agregado=models.DateTimeField(auto_now_add=True)
+     fecha_agregado=models.DateTimeField(default=timezone.now)
 
      def __str__(self):
         return self.nombre
@@ -68,5 +71,5 @@ class Proveedor(models.Model):
     empresa=models.CharField(max_length=250)
 
     def __str__(self):
-        return f"{self.nombre} de la empresa {self.empresa}"
+        return f"{self.nombre}  {self.apellido}  ({self.empresa})"
 

@@ -8,23 +8,20 @@
 
 <li>{{consumible}}</li>
 
-<button>
-    <a href="{% url 'consumible_detalle' consumible.id %}">DETALLE</a>
-</button>
-<button>
-    <a href="{% url 'consumible_editar' consumible.id %}">EDITAR</a>
-</button>
-<button>
-    <a href="{% url 'consumible_borrar' consumible.id %}">BORRAR</a>
-</button>
+    <a href="{% url 'consumible_detalle' consumible.id %}"><button>DETALLE</button></a>
+    <a href="{% url 'consumible_editar' consumible.id %}"><button>EDITAR</button></a>
+    <a href="{% url 'consumible_borrar' consumible.id %}"><button>BORRAR</button></a>
 
 {% endfor %}
 
 <p>
-    <button>
-    <a href="{% url 'consumible_crear' %}">CREAR</a>
-    </button>
+    <a href="{% url 'consumible_crear' %}"><button>CREAR</button></a>
 </p>
+
+<p>
+    <a href="{% url 'BusquedaConsumible' %}"><button>BUSCAR</button></a>
+</p>
+
 
 {% endblock %}
 

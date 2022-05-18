@@ -1,0 +1,25 @@
+{% extends "Inventario/padre.html" %}
+
+{% load static %}
+
+{% block SeccióndeConsumibles %}
+
+{% if consumibles %}
+
+<p>Resultados de la búsqueda:</p>
+
+<ul>
+{% for consumible in consumibles %}
+    <li>Nombre: {{consumible.nombre}}</li>
+    <li>Presentación: {{consumible.presentacion}}</li>
+    <li>Cantidad: {{consumible.cantidad}}</li>
+    <li>Área de trabajo: {{consumible.area_de_trabajo}}</li>
+    <li>Fecha en que se agregó: {{consumible.fecha_agregado}}</li>
+{% endfor %}
+
+</ul>
+
+{% endif %}
+
+
+{% endblock %}

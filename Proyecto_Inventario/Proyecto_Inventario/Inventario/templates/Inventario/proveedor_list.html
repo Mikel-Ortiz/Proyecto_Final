@@ -8,23 +8,18 @@
 
 <li>{{proveedor}}</li>
 
-<button>
-    <a href="{% url 'proveedor_detalle' proveedor.id %}">DETALLE</a>
-</button>
-<button>
-    <a href="{% url 'proveedor_editar' proveedor.id %}">EDITAR</a>
-</button>
-<button>
-    <a href="{% url 'proveedor_borrar' proveedor.id %}">BORRAR</a>
-</button>
+    <a href="{% url 'proveedor_detalle' proveedor.id %}"><button>DETALLE</button></a>
+    <a href="{% url 'proveedor_editar' proveedor.id %}"><button>EDITAR</button></a>
+    <a href="{% url 'proveedor_borrar' proveedor.id %}"><button>BORRAR</button></a>
 
 {% endfor %}
 
 <p>
-    <button>
-    <a href="{% url 'proveedor_crear' %}">CREAR</a>
-    </button>
+    <a href="{% url 'proveedor_crear' %}"><button>CREAR</button></a>
 </p>
 
+<p>
+    <a href="{% url 'BusquedaProveedor' %}"><button>BUSCAR</button></a>
+</p>
 {% endblock %}
 

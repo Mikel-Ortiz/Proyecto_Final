@@ -8,22 +8,18 @@
 
 <li>{{reactivo}}</li>
 
-<button>
-    <a href="{% url 'reactivo_detalle' reactivo.id %}">DETALLE</a>
-</button>
-<button>
-    <a href="{% url 'reactivo_editar' reactivo.id %}">EDITAR</a>
-</button>
-<button>
-    <a href="{% url 'reactivo_borrar' reactivo.id %}">BORRAR</a>
-</button>
+    <a href="{% url 'reactivo_detalle' reactivo.id %}"><button>DETALLE</button></a>
+    <a href="{% url 'reactivo_editar' reactivo.id %}"><button>EDITAR</button></a>
+    <a href="{% url 'reactivo_borrar' reactivo.id %}"><button>BORRAR</button></a>
 
 {% endfor %}
 
 <p>
-    <button>
-    <a href="{% url 'reactivo_crear' %}">CREAR</a>
-    </button>
+    <a href="{% url 'reactivo_crear' %}"><button>CREAR</button></a>
+</p>
+
+<p>
+    <a href="{% url 'BusquedaReactivo' %}"><button>BUSCAR</button></a>
 </p>
 
 {% endblock %}

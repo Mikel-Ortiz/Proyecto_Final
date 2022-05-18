@@ -1,0 +1,25 @@
+{% extends "Inventario/padre.html" %}
+
+{% load static %}
+
+{% block SeccióndeReactivos %}
+
+{% if reactivos %}
+
+<p>Resultados de la búsqueda:</p>
+
+<ul>
+{% for reactivo in reactivos %}
+    <li>Nombre: {{reactivo.nombre}}</li>
+    <li>Estado de agregación: {{reactivo.estado_de_agregacion}}</li>
+    <li>Cantidad: {{reactivo.cantidad}}</li>
+    <li>Almacenamiento: {{reactivo.almacenamiento}}</li>
+    <li>Fecha en que se agregó: {{reactivo.fecha_agregado}}</li>
+{% endfor %}
+
+</ul>
+
+{% endif %}
+
+{% endblock %}
+
